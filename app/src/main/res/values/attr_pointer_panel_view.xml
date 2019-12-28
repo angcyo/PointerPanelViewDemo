@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PointerPanelView">
+        <attr name="p_track_radius" format="dimension" />
+        <attr name="p_thumb_radius" format="dimension" />
+        <attr name="p_track_size" format="dimension" />
+        <attr name="p_track_start_angle" format="integer" />
+        <attr name="p_track_progress" format="float" />
+        <attr name="p_track_end_angle" format="integer" />
+        <attr name="p_thumb_drawable" format="reference" />
+        <attr name="p_track_angle_text_step" format="integer" />
+    </declare-styleable>
+</resources>

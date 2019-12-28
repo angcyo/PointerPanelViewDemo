@@ -6,13 +6,76 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.angcyo.pointerpanelviewdemo.PointerPanelView
-        android:layout_width="200dp"
-        android:layout_height="200dp" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:background="#40000000"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <com.angcyo.pointerpanelviewdemo.PointerPanelView
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        <com.angcyo.pointerpanelviewdemo.PointerPanelView
+            android:id="@+id/first_view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:paddingTop="20dp"
+            app:p_thumb_drawable="@drawable/thumb_drawable"
+            app:p_track_angle_text_step="1"
+            app:p_track_end_angle="305"
+            app:p_track_radius="300dp"
+            app:p_track_start_angle="235"
+            tools:p_track_progress="0.5f" />
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="60dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <View
+                    android:id="@+id/bg_view"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:background="@drawable/thumb_drawable"
+                    android:backgroundTint="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/text_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    app:layout_constraintBottom_toBottomOf="@id/bg_view"
+                    app:layout_constraintLeft_toLeftOf="@id/bg_view"
+                    app:layout_constraintRight_toRightOf="@id/bg_view"
+                    app:layout_constraintTop_toTopOf="@id/bg_view"
+                    tools:text="45°C" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.angcyo.pointerpanelviewdemo.PointerPanelView
+                android:id="@+id/second_view"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                app:p_thumb_drawable="@drawable/ic_pointer"
+                app:p_thumb_radius="40dp"
+                app:p_track_end_angle="445"
+                app:p_track_radius="125dp"
+                app:p_track_size="4dp"
+                app:p_track_start_angle="95"
+                tools:p_track_progress="0.5f" />
+
+        </FrameLayout>
+
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
